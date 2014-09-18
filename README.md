@@ -124,6 +124,11 @@ mixes(Foo, {
 
 Other types (numbers, strings, etc) are ignored.
 
+
+#### `mixes.mix(obj, entries)`
+
+The same as above, but operates on any object as opposed to an object's prototype.
+
 ## License
 
 MIT, see [LICENSE.md](http://github.com/mattdesl/mixes/blob/master/LICENSE.md) for details.
