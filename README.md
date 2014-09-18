@@ -34,7 +34,9 @@ mixes(Dagger, require('./mixins/item'))
 mixes(Dagger, require('./mixins/weapon'))
 ```
 
-## Example
+## Motivation
+
+Take the following example:
 
 ```js
 var mixes = require('mixes')
@@ -62,14 +64,6 @@ mixes(MyClass, {
 		}
 	}
 })
-```
-
-Using the class:
-
-```js
-var m = new MyClass()
-m.foo(a, b)
-m.blah = 50
 ```
 
 The same code would look like this in pure JS:
