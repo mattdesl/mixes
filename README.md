@@ -5,6 +5,7 @@
 A minimal util to mixin functions and properties. This helps reduce the boilerplate and repetition of `MyClass.prototype` and `Object.defineProperty`.
 
 ```js
+//mixin some stuff to MyClass.prototype
 require('mixes')(MyClass, {
 
 	//a function
