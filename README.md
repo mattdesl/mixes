@@ -44,7 +44,7 @@ m.blah = 50
 
 The same code would look like this in pure JS:
 
-```
+```js
 function MyClass() {
 	this._blah = 0
 }
