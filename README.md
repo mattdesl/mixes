@@ -34,7 +34,15 @@ mixes(MyClass, {
 })
 ```
 
-This equates to writing the following with pure JS:
+Using the class:
+
+```js
+var m = new MyClass()
+m.foo(a, b)
+m.blah = 50
+```
+
+The same code would look like this in pure JS:
 
 ```
 function MyClass() {
