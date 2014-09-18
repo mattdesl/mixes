@@ -5,18 +5,22 @@ var defaults = {
 	configurable: true
 }
 
-module.exports = function mixes(ctor, entries) {
-	var proto = ctor.prototype
-	
+function mix(obj, entries) {
 	for (var k in entries) {
 		if (!entries.hasOwnProperty(k))
 			continue
 		var f = entries[k]
 		if (typeof f === 'function') {
-			proto[k] = f
+			obj[k] = f
 		} else if (typeof f === 'object') {
 			var def = xtend(defaults, f)
-			Object.defineProperty(proto, k, def);
+			Object.defineProperty(obj, k, def);
 		}
 	}
 }
+
+module.exports = function mixes(ctor, entries) {
+	mix(ctor.prototype, entries)
+}
+
+module.exports.mix = mix

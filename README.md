@@ -8,12 +8,12 @@ A minimal util to mixin functions and properties. This helps reduce the boilerpl
 //mixin some stuff to MyClass.prototype
 require('mixes')(MyClass, {
 
-	//a function
+	//mixin functions
 	foo: function(a, b) {
 		return a + b
 	},
 	
-	//an object for Object.defineProperty
+	//mixin an object for Object.defineProperty
 	bar: {
 		get: function() {
 			return "boop"
@@ -22,7 +22,7 @@ require('mixes')(MyClass, {
 })
 ```
 
-Using the class:
+Then, you can use them as expected:
 
 ```js
 var m = new MyClass()
@@ -42,65 +42,25 @@ mixes(Dagger, require('./mixins/item'))
 mixes(Dagger, require('./mixins/weapon'))
 ```
 
-## Motivation
+## motivation
 
-Take the following example:
-
-```js
-var mixes = require('mixes')
-
-function MyClass() {
-	this._blah = 0
-}
-
-mixes(MyClass, {
-	//mix in functions
-	foo: function(a, b) { 
-		return a + b
-	},
-
-	bar: function() {
-	},
-
-	//mix in property
-	blah: {
-		get: function() {
-			return this._blah
-		},
-		set: function(blah) {
-			this._blah = blah || 0
-		}
-	}
-})
-```
-
-The same code would look like this in pure JS:
+The earlier code would look like this in pure JS, and tends to bloat as you add more functions and properties.
 
 ```js
-function MyClass() {
-	this._blah = 0
-}
-
 MyClass.prototype.foo = function(a, b) {
 	return a + b
 }
 
-MyClass.prototype.bar = function(a, b) {
-}
-
-Object.defineProperty(MyClass.prototype, "blah", {
+Object.defineProperty(MyClass.prototype, "bar", {
 	enumerable: true,
 	configurable: true,
 	get: function() {
-		return this._blah
-	},
-	set: function(blah) {
-		this._blah = blah || 0
+		return "boop"
 	}
-}
+})
 ```
 
-This is also nicer than the `Blah.prototype = { ... }` approach since it doesn't destroy your prototype chain (i.e. in the case of inheriting from a base class).
+This is also nicer than `Blah.prototype = { ... }` since it doesn't destroy your prototype chain (i.e. if you're inheriting from a base class).
 
 ## Usage
 
@@ -124,10 +84,9 @@ mixes(Foo, {
 
 Other types (numbers, strings, etc) are ignored.
 
-
 #### `mixes.mix(obj, entries)`
 
-The same as above, but operates on any object as opposed to an object's prototype.
+The same as above, but operates on any object as opposed to an object's `prototype`.
 
 ## License
 
