@@ -2,7 +2,7 @@
 
 [![stable](http://badges.github.io/stability-badges/dist/stable.svg)](http://github.com/badges/stability-badges)
 
-A minimal function to mixin functions and properties. This helps reduce the boilerplate and repetition of `MyClass.prototype` and `Object.defineProperty`.
+A minimal util to mixin functions and properties. This helps reduce the boilerplate and repetition of `MyClass.prototype` and `Object.defineProperty`.
 
 Typical example:
 
