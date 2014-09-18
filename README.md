@@ -4,7 +4,36 @@
 
 A minimal util to mixin functions and properties. This helps reduce the boilerplate and repetition of `MyClass.prototype` and `Object.defineProperty`.
 
-Typical example:
+```js
+require('mixes')(MyClass, {
+
+	//a function
+	foo: function(a, b) {
+		return a + b
+	},
+	
+	//an object for Object.defineProperty
+	bar: {
+		get: function() {
+			return "boop"
+		}
+	}	
+})
+```
+
+It also allows you to create collections of mixins easily:
+
+```js
+var mixes = require('mixes')
+
+function Dagger() {
+}
+
+mixes(Dagger, require('./mixins/item'))
+mixes(Dagger, require('./mixins/weapon'))
+```
+
+## Example
 
 ```js
 var mixes = require('mixes')
@@ -69,18 +98,6 @@ Object.defineProperty(MyClass.prototype, "blah", {
 ```
 
 This is also nicer than the `Blah.prototype = { ... }` approach since it doesn't destroy your prototype chain (i.e. in the case of inheriting from a base class).
-
-It also allows you to create collections of mixins easily:
-
-```js
-var mixes = require('mixes')
-
-function Dagger() {
-}
-
-mixes(Dagger, require('./mixins/item'))
-mixes(Dagger, require('./mixins/weapon'))
-```
 
 ## Usage
 
