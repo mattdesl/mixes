@@ -4,10 +4,7 @@
   "description": "a tiny util to mix functions and properties into a prototype",
   "main": "index.js",
   "license": "MIT",
-  "author": {
-    "name": "Matt DesLauriers",
-    "email": "dave.des@gmail.com"
-  },
+  "author": "Matt DesLauriers <dave.des@gmail.com>",
   "dependencies": {
     "xtend": "^4.0.0"
   },
@@ -37,5 +34,25 @@
   "homepage": "https://github.com/mattdesl/mixes",
   "bugs": {
     "url": "https://github.com/mattdesl/mixes/issues"
-  }
+  },
+  "keywords": [
+    "mix",
+    "mixes",
+    "mixin",
+    "mixins",
+    "proto",
+    "prototype",
+    "prototypes",
+    "class",
+    "prop",
+    "property",
+    "props",
+    "properties",
+    "props",
+    "defineProperty",
+    "Object.defineProperty",
+    "Object",
+    "defineProperties",
+    "define"
+  ]
 }
