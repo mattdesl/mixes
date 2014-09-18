@@ -1,6 +1,6 @@
 {
   "name": "mixes",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "a tiny util to mix functions and properties into a prototype",
   "main": "index.js",
   "license": "MIT",
