@@ -22,6 +22,14 @@ require('mixes')(MyClass, {
 })
 ```
 
+Using the class:
+
+```js
+var m = new MyClass()
+m.foo(a, b)
+console.log( m.bar )
+```
+
 It also allows you to create collections of mixins easily:
 
 ```js
