@@ -50,3 +50,28 @@ test('it should mix in', function(t) {
 
 	t.end()
 })
+
+test('should handle nulls', function(t) {
+	var obj = {
+
+		foo: null,
+		bar: null,
+
+		blah: function() {
+			console.log(this.foo)
+			this.bar = 'nonull'
+			console.log(this.bar)
+			return this.bar
+		}
+	}
+
+	function Ctor() {
+	}
+
+	mixes(Ctor, obj)
+
+	var c = new Ctor()
+
+	t.equal( c.blah(), 'nonull' )
+	t.end()
+})

@@ -12,7 +12,7 @@ function mix(obj, entries) {
 		var f = entries[k]
 		if (typeof f === 'function') {
 			obj[k] = f
-		} else if (typeof f === 'object') {
+		} else if (f && typeof f === 'object') {
 			var def = xtend(defaults, f)
 			Object.defineProperty(obj, k, def);
 		}
