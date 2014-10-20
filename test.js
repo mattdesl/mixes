@@ -54,14 +54,16 @@ test('it should mix in', function(t) {
 test('should handle nulls', function(t) {
 	var obj = {
 
-		foo: null,
+		foo: 'foo',
 		bar: null,
 
 		blah: function() {
-			console.log(this.foo)
 			this.bar = 'nonull'
-			console.log(this.bar)
 			return this.bar
+		},
+
+		blah2: function() {
+			return this.foo
 		}
 	}
 
@@ -73,5 +75,7 @@ test('should handle nulls', function(t) {
 	var c = new Ctor()
 
 	t.equal( c.blah(), 'nonull' )
+	t.equal( c.blah2(), undefined, 'ignores any non function or object' )
+	
 	t.end()
 })
